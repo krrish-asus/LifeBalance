@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>LifeBalance</h2>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<div class="container">
+
+  <div class="card" onclick="go('calculator.html')">🧮 Calculator</div>
+  <div class="card" onclick="go('percentage.html')">📊 Percentage</div>
+  <div class="card" onclick="go('expense.html')">💰 Expense Tracker</div>
+  <div class="card" onclick="go('game.html')">🎮 Pacman</div>
+
+</div>
+
+<script>
+function go(page){
+  window.location.href = page;
+}
+
+function logout(){
+  localStorage.removeItem('token');
+  window.location.href = "login.html";
+}
+
+const token = localStorage.getItem('token');
+if(!token){
+  alert("Login first");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

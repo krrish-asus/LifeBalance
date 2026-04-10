@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Percentage Calculator</h2>
+
+<input id="total" placeholder="Total">
+<input id="part" placeholder="Part">
+
+<button onclick="calc()">Calculate</button>
+
+<h3 id="result"></h3>
+
+<script>
+function calc(){
+  let total = document.getElementById('total').value;
+  let part = document.getElementById('part').value;
+
+  let percent = (part / total) * 100;
+
+  document.getElementById('result').innerText =
+    percent + "%";
+}
+</script>
+
+</body>
+</html>
